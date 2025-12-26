@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 26, 2025 lúc 03:35 PM
+-- Thời gian đã tạo: Th12 26, 2025 lúc 03:38 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -185,7 +185,7 @@ CREATE TABLE `tbl_loaicong` (
 CREATE TABLE `tbl_nhanvien` (
   `MaNV` varchar(15) NOT NULL,
   `HoTen` varchar(50) DEFAULT NULL,
-  `GioiTinh` bit(20) DEFAULT NULL,
+  `GioiTinh` bit(1) DEFAULT NULL,
   `NgaySinh` date DEFAULT NULL,
   `DienThoai` varchar(50) DEFAULT NULL,
   `CCCD` varchar(50) DEFAULT NULL,
@@ -202,12 +202,12 @@ CREATE TABLE `tbl_nhanvien` (
 --
 
 INSERT INTO `tbl_nhanvien` (`MaNV`, `HoTen`, `GioiTinh`, `NgaySinh`, `DienThoai`, `CCCD`, `DiaChi`, `HinhAnh`, `IDPB`, `IDBP`, `IDCV`, `IDTD`) VALUES
-('NV01', 'Nguyễn Ngọc Linh', b'00000000000000000001', '2004-12-08', '0348624035', '466321654525', 'Hải Dương', NULL, 1, 1, 11, 21),
-('NV02', 'Lê Thanh Thảo', b'00000000000000000001', '2004-12-09', '0345485654', '215687439578', 'Hà Nội ', NULL, 2, 2, 12, 22),
-('NV03', 'Trịnh Phương An', b'00000000000000000001', '2005-12-06', '0314256987', '023159486798', 'Hà Nội ', NULL, 3, 3, 13, 23),
-('NV04', 'Phan Trọng Quân', b'00000000000000000000', '2004-01-03', '0341527895', '321452697854', 'Bắc Ninh', NULL, 4, 4, 14, 24),
-('NV05', 'Nguyền Hoàng Dương', b'00000000000000000000', '2004-01-16', '0345678951', '201456348621', 'Hà Nội', NULL, 5, 5, 15, 25),
-('NV06', 'Lưu Thanh Duy', b'00000000000000000000', '2004-12-08', '0348795247', '014258369456', 'Bắc Ninh', NULL, 6, 6, 16, 26);
+('NV01', 'Nguyễn Ngọc Linh', b'1', '2004-12-08', '0348624035', '466321654525', 'Hải Dương', NULL, 1, 1, 11, 21),
+('NV02', 'Lê Thanh Thảo', b'1', '2004-12-09', '0345485654', '215687439578', 'Hà Nội ', NULL, 2, 2, 12, 22),
+('NV03', 'Trịnh Phương An', b'1', '2005-12-06', '0314256987', '023159486798', 'Hà Nội ', NULL, 3, 3, 13, 23),
+('NV04', 'Phan Trọng Quân', b'0', '2004-01-03', '0341527895', '321452697854', 'Bắc Ninh', NULL, 4, 4, 14, 24),
+('NV05', 'Nguyền Hoàng Dương', b'0', '2004-01-16', '0345678951', '201456348621', 'Hà Nội', NULL, 5, 5, 15, 25),
+('NV06', 'Lưu Thanh Duy', b'0', '2004-12-08', '0348795247', '014258369456', 'Bắc Ninh', NULL, 6, 6, 16, 26);
 
 -- --------------------------------------------------------
 
