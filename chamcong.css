@@ -1,0 +1,211 @@
+/* ===============================
+   RESET & CƠ BẢN
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    padding: 20px;
+    color: #333;
+}
+
+/* ===============================
+   MENU TRÊN (ĐIỀU HƯỚNG)
+================================ */
+.menu,
+.menu-chuyen {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.menu a,
+.menu-chuyen a {
+    background: #0d6efd;
+    color: #fff;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.menu a:hover,
+.menu-chuyen a:hover {
+    background: #084298;
+}
+
+/* ===============================
+   TIÊU ĐỀ
+================================ */
+h2,
+.tieude-form {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0d6efd;
+}
+
+/* ===============================
+   BẢNG DỮ LIỆU
+================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background: #0d6efd;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+tr.selected {
+    background: #dbeafe !important;
+}
+
+/* ===============================
+   NÚT HÀNH ĐỘNG
+================================ */
+.menu-ngang {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.menu-ngang a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-them {
+    background: #198754;
+    color: #fff;
+}
+
+.btn-sua {
+    background: #ffc107;
+    color: #000;
+}
+
+.btn-xoa {
+    background: #dc3545;
+    color: #fff;
+}
+
+.btn-them:hover { background: #157347; }
+.btn-sua:hover { background: #ffca2c; }
+.btn-xoa:hover { background: #bb2d3b; }
+
+/* ===============================
+   FORM CHUNG
+================================ */
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-container form > div,
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.form-container input[type="submit"] {
+    margin-top: 15px;
+    width: 100%;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background: #084298;
+}
+
+/* ===============================
+   BLOCK NHÂN VIÊN / LƯƠNG
+================================ */
+.nhanvien-block {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.nhanvien-block strong {
+    color: #0d6efd;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* ===============================
+   INPUT TIỀN
+================================ */
+.money {
+    text-align: right;
+    font-weight: bold;
+}
+
+/* ===============================
+   NÚT TRANG CHỦ
+================================ */
+.home-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #0d6efd;
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    z-index: 999;
+}
+
+.home-btn:hover {
+    background: #084298;
+}

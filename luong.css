@@ -1,0 +1,245 @@
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Tahoma, Arial;
+}
+
+/* ================= NỀN CHUNG ================= */
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+}
+
+/* ================= MENU TRÊN ================= */
+.menu,
+.menu-chuyen{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    padding:15px;
+    background:rgba(0,0,0,0.65);
+}
+
+.menu a,
+.menu-chuyen a{
+    background:#1e88e5;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.3);
+}
+
+.menu a:hover,
+.menu-chuyen a:hover{
+    background:#1565c0;
+}
+
+/* ================= TIÊU ĐỀ ================= */
+h2,
+.tieude-form{
+    text-align:center;
+    margin:22px 0;
+    color:#ffeb3b;
+    letter-spacing:3px;
+}
+
+/* ================== TRANG DANH SÁCH LƯƠNG ================== */
+.table-wrap{
+    width:95%;
+    margin:0 auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    color:#000;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+th{
+    background:#3cd070;
+    padding:10px;
+    font-size:14px;
+}
+
+td{
+    padding:8px;
+    font-size:13px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f1f8e9;
+}
+
+tr.selected{
+    background:#c8e6c9 !important;
+}
+
+/* ================= BUTTON TRANG LƯƠNG ================= */
+.action{
+    margin:18px 0;
+    text-align:center;
+}
+
+.action button{
+    padding:10px 26px;
+    margin:0 8px;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 4px 8px rgba(0,0,0,0.3);
+}
+
+.action button:first-child{
+    background:#ffc107;
+}
+
+.action button:last-child{
+    background:#e53935;
+    color:#fff;
+}
+
+.action button:hover{
+    opacity:0.9;
+    transform:translateY(-2px);
+}
+.alert{
+    background:#43a047;
+    color:#fff;
+    padding:12px 18px;
+    margin:15px auto;
+    width:fit-content;
+    border-radius:8px;
+    font-weight:600;
+    box-shadow:0 4px 10px rgba(0,0,0,0.35);
+}
+
+/* ================== FORM THÊM / SỬA LƯƠNG ================== */
+.form-container{
+    width:420px;
+    margin:0 auto 40px;
+    background:rgba(0,0,0,0.65);
+    padding:25px 30px;
+    border-radius:14px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+.form-container label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-weight:600;
+}
+
+.form-container input[type="text"],
+.form-container select{
+    width:100%;
+    padding:10px;
+    border-radius:6px;
+    border:none;
+    outline:none;
+    font-size:14px;
+}
+
+.form-container input[type="hidden"]{
+    display:none;
+}
+
+.form-container input[type="submit"]{
+    width:100%;
+    margin-top:22px;
+    padding:12px;
+    background:#32cd32;
+    color:#000;
+    border:none;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.form-container input[type="submit"]:hover{
+    background:#2eb85c;
+    transform:translateY(-2px);
+}
+
+/* ================= NÚT TRANG CHỦ ================= */
+a[href="index.php"]{
+    position:fixed;
+    top:15px;
+    right:15px;
+    background:#2196f3;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 4px 8px rgba(0,0,0,0.4);
+}
+/* ================== SỬA LƯƠNG ================== */
+
+/* Khối mỗi nhân viên */
+.nhanvien-block{
+    background:rgba(255,255,255,0.08);
+    padding:18px 20px;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+
+/* Tên nhân viên */
+.nhanvien-block strong{
+    font-size:15px;
+    color:#4fc3f7;
+}
+
+/* Dòng phân cách */
+.form-container hr{
+    border:none;
+    height:1px;
+    background:rgba(255,255,255,0.15);
+    margin:15px 0;
+}
+
+/* Input tiền */
+.form-container input.money{
+    width:100%;
+    padding:10px;
+    border-radius:6px;
+    border:none;
+    font-size:14px;
+    background:#fff;
+    color:#000;
+}
+
+/* Hover input */
+.form-container input.money:focus{
+    outline:2px solid #4caf50;
+}
+
+/* Nút cập nhật */
+.form-container input[type="submit"]{
+    background:#ffca28;
+    color:#000;
+}
+
+.form-container input[type="submit"]:hover{
+    background:#fbc02d;
+}
+
+/* Responsive */
+@media (max-width:480px){
+    .form-container{
+        width:95%;
+    }
+}
