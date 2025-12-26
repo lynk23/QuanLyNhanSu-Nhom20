@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 26, 2025 at 04:53 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th12 26, 2025 lúc 05:56 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,41 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `quanlynhansu`
+-- Cơ sở dữ liệu: `quanlynhansu`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_bangcong`
---
-
-CREATE TABLE `tbl_bangcong` (
-  `MaBC` int(11) NOT NULL,
-  `Nam` int(11) DEFAULT NULL,
-  `Thang` int(11) DEFAULT NULL,
-  `Ngay` int(11) DEFAULT NULL,
-  `GioVao` int(11) DEFAULT NULL,
-  `PhutVao` int(11) DEFAULT NULL,
-  `GioRa` int(11) DEFAULT NULL,
-  `PhutRa` int(11) DEFAULT NULL,
-  `MaNV` int(11) DEFAULT NULL,
-  `IDLoaiCong` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `tbl_bangcong`
---
-
-INSERT INTO `tbl_bangcong` (`MaBC`, `Nam`, `Thang`, `Ngay`, `GioVao`, `PhutVao`, `GioRa`, `PhutRa`, `MaNV`, `IDLoaiCong`) VALUES
-(1, 2025, 1, 1, 7, 0, 17, 0, 1, 1),
-(2, 2025, 2, 2, 7, 0, 19, 0, 2, 2),
-(3, 2025, 3, 3, 7, 0, 18, 0, 3, 3);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_baohiem`
+-- Cấu trúc bảng cho bảng `tbl_baohiem`
 --
 
 CREATE TABLE `tbl_baohiem` (
@@ -65,7 +37,7 @@ CREATE TABLE `tbl_baohiem` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_baohiem`
+-- Đang đổ dữ liệu cho bảng `tbl_baohiem`
 --
 
 INSERT INTO `tbl_baohiem` (`IDBH`, `SoBH`, `NgayCap`, `NoiCap`, `NoiKhamBenh`, `MaNV`) VALUES
@@ -76,7 +48,7 @@ INSERT INTO `tbl_baohiem` (`IDBH`, `SoBH`, `NgayCap`, `NoiCap`, `NoiKhamBenh`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_bophan`
+-- Cấu trúc bảng cho bảng `tbl_bophan`
 --
 
 CREATE TABLE `tbl_bophan` (
@@ -85,7 +57,7 @@ CREATE TABLE `tbl_bophan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_bophan`
+-- Đang đổ dữ liệu cho bảng `tbl_bophan`
 --
 
 INSERT INTO `tbl_bophan` (`IDBP`, `TenBP`) VALUES
@@ -99,7 +71,32 @@ INSERT INTO `tbl_bophan` (`IDBP`, `TenBP`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_chucvu`
+-- Cấu trúc bảng cho bảng `tbl_chamcong`
+--
+
+CREATE TABLE `tbl_chamcong` (
+  `MaCC` varchar(15) NOT NULL,
+  `MaNV` varchar(15) DEFAULT NULL,
+  `Hoten` varchar(50) DEFAULT NULL,
+  `Ngay` date DEFAULT NULL,
+  `TrangThai` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_chamcong`
+--
+
+INSERT INTO `tbl_chamcong` (`MaCC`, `MaNV`, `Hoten`, `Ngay`, `TrangThai`) VALUES
+('MCC01', 'NV01', 'Nguyễn Ngọc Linh', '2025-12-26', 'Đã chấm công'),
+('MCC02', 'NV02', 'Lê Thanh Thảo', '2025-12-26', 'Đã chấm công'),
+('MCC03', 'NV03', 'Trịnh Phương Anh', '2025-12-26', 'Đã chấm công'),
+('MCC04', 'NV4', 'Phan Trọng Quân', '2025-12-26', 'Đã chấm công'),
+('MCC05', 'NV05', 'Nguyễn Hoàng Dương', '2025-12-26', 'Đã chấm công');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_chucvu`
 --
 
 CREATE TABLE `tbl_chucvu` (
@@ -108,7 +105,7 @@ CREATE TABLE `tbl_chucvu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_chucvu`
+-- Đang đổ dữ liệu cho bảng `tbl_chucvu`
 --
 
 INSERT INTO `tbl_chucvu` (`IDCV`, `TenCV`) VALUES
@@ -121,7 +118,7 @@ INSERT INTO `tbl_chucvu` (`IDCV`, `TenCV`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_hopdong`
+-- Cấu trúc bảng cho bảng `tbl_hopdong`
 --
 
 CREATE TABLE `tbl_hopdong` (
@@ -139,7 +136,7 @@ CREATE TABLE `tbl_hopdong` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_khenthuongkyluat`
+-- Cấu trúc bảng cho bảng `tbl_khenthuongkyluat`
 --
 
 CREATE TABLE `tbl_khenthuongkyluat` (
@@ -152,7 +149,7 @@ CREATE TABLE `tbl_khenthuongkyluat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_khenthuongkyluat`
+-- Đang đổ dữ liệu cho bảng `tbl_khenthuongkyluat`
 --
 
 INSERT INTO `tbl_khenthuongkyluat` (`ID`, `SoKTKL`, `NoiDung`, `Ngay`, `MaNV`, `Loai`) VALUES
@@ -166,7 +163,7 @@ INSERT INTO `tbl_khenthuongkyluat` (`ID`, `SoKTKL`, `NoiDung`, `Ngay`, `MaNV`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_loaica`
+-- Cấu trúc bảng cho bảng `tbl_loaica`
 --
 
 CREATE TABLE `tbl_loaica` (
@@ -178,19 +175,35 @@ CREATE TABLE `tbl_loaica` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_loaicong`
+-- Cấu trúc bảng cho bảng `tbl_luong`
 --
 
-CREATE TABLE `tbl_loaicong` (
-  `IDLoaiCong` int(11) NOT NULL,
-  `TenLC` varchar(50) DEFAULT NULL,
-  `HeSo` float DEFAULT NULL
+CREATE TABLE `tbl_luong` (
+  `ID` int(11) NOT NULL,
+  `MaNV` varchar(15) DEFAULT NULL,
+  `Hoten` varchar(50) DEFAULT NULL,
+  `Luongcoban` int(11) DEFAULT NULL,
+  `Phucap` int(11) DEFAULT NULL,
+  `ThueTNCN` int(11) DEFAULT NULL,
+  `Tongluong` int(11) DEFAULT NULL,
+  `is_deleted` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_luong`
+--
+
+INSERT INTO `tbl_luong` (`ID`, `MaNV`, `Hoten`, `Luongcoban`, `Phucap`, `ThueTNCN`, `Tongluong`, `is_deleted`) VALUES
+(1, 'NV01', 'Nguyễn Ngọc Linh', 7000000, 2000000, 0, 9000000, 0),
+(2, 'NV02', 'Lê Thanh Thảo', 7000000, 2000000, 0, 9000000, 0),
+(3, 'NV03', 'Trịnh Phương An', 7000000, 2000000, 0, 9000000, 0),
+(4, 'NV04', 'Phan Trọng Quân', 7000000, 2000000, 0, 9000000, 0),
+(5, 'NV05', 'Nguyễn Hoàng Dương', 7000000, 2000000, 0, 9000000, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_nhanvien`
+-- Cấu trúc bảng cho bảng `tbl_nhanvien`
 --
 
 CREATE TABLE `tbl_nhanvien` (
@@ -209,7 +222,7 @@ CREATE TABLE `tbl_nhanvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_nhanvien`
+-- Đang đổ dữ liệu cho bảng `tbl_nhanvien`
 --
 
 INSERT INTO `tbl_nhanvien` (`MaNV`, `HoTen`, `GioiTinh`, `NgaySinh`, `DienThoai`, `CCCD`, `DiaChi`, `HinhAnh`, `IDPB`, `IDBP`, `IDCV`, `IDTD`) VALUES
@@ -223,7 +236,7 @@ INSERT INTO `tbl_nhanvien` (`MaNV`, `HoTen`, `GioiTinh`, `NgaySinh`, `DienThoai`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_phongban`
+-- Cấu trúc bảng cho bảng `tbl_phongban`
 --
 
 CREATE TABLE `tbl_phongban` (
@@ -232,7 +245,7 @@ CREATE TABLE `tbl_phongban` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_phongban`
+-- Đang đổ dữ liệu cho bảng `tbl_phongban`
 --
 
 INSERT INTO `tbl_phongban` (`IDPB`, `TenPB`) VALUES
@@ -245,21 +258,7 @@ INSERT INTO `tbl_phongban` (`IDPB`, `TenPB`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_phucap`
---
-
-CREATE TABLE `tbl_phucap` (
-  `IDPC` int(11) NOT NULL,
-  `MaNV` varchar(15) DEFAULT NULL,
-  `Ngay` date DEFAULT NULL,
-  `NoiDung` varchar(500) DEFAULT NULL,
-  `SoTien` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_taikhoan`
+-- Cấu trúc bảng cho bảng `tbl_taikhoan`
 --
 
 CREATE TABLE `tbl_taikhoan` (
@@ -270,7 +269,7 @@ CREATE TABLE `tbl_taikhoan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_taikhoan`
+-- Đang đổ dữ liệu cho bảng `tbl_taikhoan`
 --
 
 INSERT INTO `tbl_taikhoan` (`ID`, `username`, `password`, `MaNV`) VALUES
@@ -279,7 +278,7 @@ INSERT INTO `tbl_taikhoan` (`ID`, `username`, `password`, `MaNV`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_tangca`
+-- Cấu trúc bảng cho bảng `tbl_tangca`
 --
 
 CREATE TABLE `tbl_tangca` (
@@ -295,7 +294,7 @@ CREATE TABLE `tbl_tangca` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_trinhdo`
+-- Cấu trúc bảng cho bảng `tbl_trinhdo`
 --
 
 CREATE TABLE `tbl_trinhdo` (
@@ -306,7 +305,7 @@ CREATE TABLE `tbl_trinhdo` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_ungluong`
+-- Cấu trúc bảng cho bảng `tbl_ungluong`
 --
 
 CREATE TABLE `tbl_ungluong` (
@@ -320,95 +319,89 @@ CREATE TABLE `tbl_ungluong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `tbl_bangcong`
---
-ALTER TABLE `tbl_bangcong`
-  ADD PRIMARY KEY (`MaBC`);
-
---
--- Indexes for table `tbl_baohiem`
+-- Chỉ mục cho bảng `tbl_baohiem`
 --
 ALTER TABLE `tbl_baohiem`
   ADD PRIMARY KEY (`IDBH`);
 
 --
--- Indexes for table `tbl_bophan`
+-- Chỉ mục cho bảng `tbl_bophan`
 --
 ALTER TABLE `tbl_bophan`
   ADD PRIMARY KEY (`IDBP`);
 
 --
--- Indexes for table `tbl_chucvu`
+-- Chỉ mục cho bảng `tbl_chamcong`
+--
+ALTER TABLE `tbl_chamcong`
+  ADD PRIMARY KEY (`MaCC`);
+
+--
+-- Chỉ mục cho bảng `tbl_chucvu`
 --
 ALTER TABLE `tbl_chucvu`
   ADD PRIMARY KEY (`IDCV`);
 
 --
--- Indexes for table `tbl_hopdong`
+-- Chỉ mục cho bảng `tbl_hopdong`
 --
 ALTER TABLE `tbl_hopdong`
   ADD PRIMARY KEY (`SoHD`);
 
 --
--- Indexes for table `tbl_khenthuongkyluat`
+-- Chỉ mục cho bảng `tbl_khenthuongkyluat`
 --
 ALTER TABLE `tbl_khenthuongkyluat`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tbl_loaica`
+-- Chỉ mục cho bảng `tbl_loaica`
 --
 ALTER TABLE `tbl_loaica`
   ADD PRIMARY KEY (`IDLoaiCa`);
 
 --
--- Indexes for table `tbl_loaicong`
+-- Chỉ mục cho bảng `tbl_luong`
 --
-ALTER TABLE `tbl_loaicong`
-  ADD PRIMARY KEY (`IDLoaiCong`);
+ALTER TABLE `tbl_luong`
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tbl_nhanvien`
+-- Chỉ mục cho bảng `tbl_nhanvien`
 --
 ALTER TABLE `tbl_nhanvien`
   ADD PRIMARY KEY (`MaNV`);
 
 --
--- Indexes for table `tbl_phongban`
+-- Chỉ mục cho bảng `tbl_phongban`
 --
 ALTER TABLE `tbl_phongban`
   ADD PRIMARY KEY (`IDPB`);
 
 --
--- Indexes for table `tbl_phucap`
---
-ALTER TABLE `tbl_phucap`
-  ADD PRIMARY KEY (`IDPC`);
-
---
--- Indexes for table `tbl_taikhoan`
+-- Chỉ mục cho bảng `tbl_taikhoan`
 --
 ALTER TABLE `tbl_taikhoan`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tbl_tangca`
+-- Chỉ mục cho bảng `tbl_tangca`
 --
 ALTER TABLE `tbl_tangca`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tbl_trinhdo`
+-- Chỉ mục cho bảng `tbl_trinhdo`
 --
 ALTER TABLE `tbl_trinhdo`
   ADD PRIMARY KEY (`IDTD`);
 
 --
--- Indexes for table `tbl_ungluong`
+-- Chỉ mục cho bảng `tbl_ungluong`
 --
 ALTER TABLE `tbl_ungluong`
   ADD PRIMARY KEY (`ID`);
