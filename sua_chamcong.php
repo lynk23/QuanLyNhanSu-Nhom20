@@ -1,5 +1,5 @@
 <?php
-include "ketnoi.php";
+include "connect.php";
 
 /* =========================
    XỬ LÝ CẬP NHẬT (POST)

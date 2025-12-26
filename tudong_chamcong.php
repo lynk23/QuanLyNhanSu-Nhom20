@@ -1,5 +1,5 @@
 <?php
-include "ketnoi.php";
+include "connect.php";
 
 /* =========================
    1. LẤY NGÀY HÔM NAY

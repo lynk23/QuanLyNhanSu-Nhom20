@@ -1,5 +1,5 @@
 <?php
-include 'ketnoi.php';
+include 'connect.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['ids'])) {

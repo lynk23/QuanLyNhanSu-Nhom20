@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'ketnoi.php';
+include 'connect.php';
 
 /* Tự động thêm lương cho nhân viên chưa có */
 $nhanvien_query = mysqli_query($conn, "SELECT manv FROM tbl_nhanvien");

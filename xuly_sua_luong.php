@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'ketnoi.php';
+include 'connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST['luong'])) {
 

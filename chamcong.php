@@ -1,5 +1,5 @@
 <?php
-include 'ketnoi.php';
+include 'connect.php';
 
 /*
   Đồng bộ trạng thái chấm công theo trạng thái nhân viên
