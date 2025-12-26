@@ -1,0 +1,170 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Background tổng thể - màu chữ trong bảng */
+body {
+    background: url('qlpb.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    padding: 20px;
+    color: #111010;
+}
+
+/* ====== MENU ====== */
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.menu a {
+    background: #1e90ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+.menu a:hover {
+    transform: scale(1.05);
+}
+
+/* ====== TIÊU ĐỀ - DANH SÁCH  ====== */
+.form, h2 {
+    text-align: center;
+    color: hsl(0, 4%, 5%);
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+
+/* ====== FORM THÊM CHỨC VỤ ====== */
+form {
+    width: 600px;
+    margin: 0 auto;
+    background: #c9d1d9;
+    backdrop-filter: blur(6px);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+}
+/* Màu chữ chức vụ */
+form p {
+    margin-bottom: 6px;
+    color: #743c79;
+    font-weight: bold;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    margin-bottom: 15px;
+}
+/* màu của chữ Thêm-Sửa-Xoá trong bảng */
+form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: #ff741e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form input[type="submit"]:hover {
+    background: #0d6efd;
+}
+
+/* ====== BẢNG DANH SÁCH ====== */
+.table-container {
+    width: 90%;
+    margin: 25px auto;
+    overflow: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 12px rgba(0,0,0,0.4);
+}
+/* Màu trong của bảng */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 253, 253, 0.8);
+}
+
+thead tr {
+    background: #0f0f0f;
+    color: #000;   
+    font-weight: bold;
+}
+
+thead th {
+    color: #000 !important;
+    padding: 12px 10px;
+    border-bottom: 2px solid #0f0e0e;
+    text-align: center;
+}
+
+tbody td {
+    padding: 10px;
+    color: #060606;
+    text-align: center;
+    border-bottom: 1px solid #535553;
+}
+
+/* ====== NÚT CHỨC NĂNG DƯỚI BẢNG ====== */
+.btn-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.btn-group a {
+    background: #1e90ff;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-group a:hover {
+    transform: scale(1.05);
+    background: #0d6efd;
+}
+
+/* ====== NÚT TRANG CHỦ BÊN PHẢI ====== */
+.home-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    bottom: 20px;   /* Khoảng cách với đáy màn hình */
+    left: 20px;     /* Khoảng cách với mép trái màn hình */
+    z-index: 9999;  /* Đè lên các phần khác */
+}
+
+.home-button a {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
