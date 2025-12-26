@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 21, 2025 lúc 08:24 AM
+-- Thời gian đã tạo: Th12 26, 2025 lúc 03:35 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -84,6 +84,18 @@ CREATE TABLE `tbl_bophan` (
   `TenBP` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `tbl_bophan`
+--
+
+INSERT INTO `tbl_bophan` (`IDBP`, `TenBP`) VALUES
+(1, 'Kinh Doanh'),
+(2, 'Kế Toán'),
+(3, 'Nhân Sự'),
+(4, 'Kỹ Thuật'),
+(5, 'Marketing'),
+(6, 'Logistics');
+
 -- --------------------------------------------------------
 
 --
@@ -110,23 +122,35 @@ CREATE TABLE `tbl_hopdong` (
   `LanKy` int(11) DEFAULT NULL,
   `ThoiHan` varchar(50) DEFAULT NULL,
   `HeSoLuong` float DEFAULT NULL,
-  `MaNV` int(11) DEFAULT NULL
+  `MaNV` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_khenthuong&kyluat`
+-- Cấu trúc bảng cho bảng `tbl_khenthuongkyluat`
 --
 
-CREATE TABLE `tbl_khenthuong&kyluat` (
+CREATE TABLE `tbl_khenthuongkyluat` (
   `ID` int(11) NOT NULL,
   `SoKTKL` int(11) DEFAULT NULL,
   `NoiDung` varchar(500) DEFAULT NULL,
   `Ngay` date DEFAULT NULL,
-  `MaNV` date DEFAULT NULL,
-  `Loai` int(11) DEFAULT NULL
+  `MaNV` varchar(15) DEFAULT NULL,
+  `Loai` int(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_khenthuongkyluat`
+--
+
+INSERT INTO `tbl_khenthuongkyluat` (`ID`, `SoKTKL`, `NoiDung`, `Ngay`, `MaNV`, `Loai`) VALUES
+(1, 1001, 'Hoàn thành xuất sắc nhiệm vụ quý I', '2025-03-10', 'NV01', 1),
+(2, 1002, 'Đi làm muộn nhiều lần', '2025-04-15', 'NV02', 0),
+(3, 1003, 'Đạt doanh số cao nhất tháng', '2025-07-05', 'NV03', 1),
+(4, 1004, 'Vi phạm nội quy công ty', '2025-08-12', 'NV04', 0),
+(5, 1005, 'Tinh thần làm việc tốt', '2025-09-12', 'NV05', 1),
+(6, 1006, 'Hoàn Thành Nhiệm Vụ Qúy II', '2025-10-12', 'NV06', 1);
 
 -- --------------------------------------------------------
 
@@ -159,7 +183,7 @@ CREATE TABLE `tbl_loaicong` (
 --
 
 CREATE TABLE `tbl_nhanvien` (
-  `MaNV` int(11) NOT NULL,
+  `MaNV` varchar(15) NOT NULL,
   `HoTen` varchar(50) DEFAULT NULL,
   `GioiTinh` bit(20) DEFAULT NULL,
   `NgaySinh` date DEFAULT NULL,
@@ -178,12 +202,12 @@ CREATE TABLE `tbl_nhanvien` (
 --
 
 INSERT INTO `tbl_nhanvien` (`MaNV`, `HoTen`, `GioiTinh`, `NgaySinh`, `DienThoai`, `CCCD`, `DiaChi`, `HinhAnh`, `IDPB`, `IDBP`, `IDCV`, `IDTD`) VALUES
-(1, 'linh', b'00000000000000000001', '2004-12-08', '0348624035', '466321654525', 'Hải Dương', NULL, 22, 11, 33, 44),
-(2, 'duyên', b'00000000000000000001', '2004-12-09', '0345485654', '215687439578', 'Hà Nội ', NULL, 12, 45, 79, 63),
-(3, 'hiền', b'00000000000000000001', '2004-09-28', '0987654321', '247895423145', 'Thanh Hóa', NULL, 47, 10, 12, 33),
-(4, 'linh', b'00000000000000000001', '2004-11-23', '0347895722', '235478956541', 'Bắc Ninh', NULL, 14, 23, 11, 20),
-(5, 'long', b'00000000000000000000', '2004-01-03', '0341527895', '321452697854', 'Bắc Ninh', NULL, 41, 72, 32, 50),
-(6, 'thăng', b'00000000000000000000', '2004-01-16', '0345678951', '201456348621', 'Hà Nội', NULL, 21, 56, 70, 88);
+('NV01', 'Nguyễn Ngọc Linh', b'00000000000000000001', '2004-12-08', '0348624035', '466321654525', 'Hải Dương', NULL, 1, 1, 11, 21),
+('NV02', 'Lê Thanh Thảo', b'00000000000000000001', '2004-12-09', '0345485654', '215687439578', 'Hà Nội ', NULL, 2, 2, 12, 22),
+('NV03', 'Trịnh Phương An', b'00000000000000000001', '2005-12-06', '0314256987', '023159486798', 'Hà Nội ', NULL, 3, 3, 13, 23),
+('NV04', 'Phan Trọng Quân', b'00000000000000000000', '2004-01-03', '0341527895', '321452697854', 'Bắc Ninh', NULL, 4, 4, 14, 24),
+('NV05', 'Nguyền Hoàng Dương', b'00000000000000000000', '2004-01-16', '0345678951', '201456348621', 'Hà Nội', NULL, 5, 5, 15, 25),
+('NV06', 'Lưu Thanh Duy', b'00000000000000000000', '2004-12-08', '0348795247', '014258369456', 'Bắc Ninh', NULL, 6, 6, 16, 26);
 
 -- --------------------------------------------------------
 
@@ -204,7 +228,7 @@ CREATE TABLE `tbl_phongban` (
 
 CREATE TABLE `tbl_phucap` (
   `IDPC` int(11) NOT NULL,
-  `MaNV` int(11) DEFAULT NULL,
+  `MaNV` varchar(15) DEFAULT NULL,
   `Ngay` date DEFAULT NULL,
   `NoiDung` varchar(500) DEFAULT NULL,
   `SoTien` float DEFAULT NULL
@@ -217,18 +241,18 @@ CREATE TABLE `tbl_phucap` (
 --
 
 CREATE TABLE `tbl_taikhoan` (
-  `id` int(11) NOT NULL,
+  `ID` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `MaNV` int(11) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `MaNV` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_taikhoan`
 --
 
-INSERT INTO `tbl_taikhoan` (`id`, `username`, `password`, `MaNV`) VALUES
-(1, 'admin', '123456', 1);
+INSERT INTO `tbl_taikhoan` (`ID`, `username`, `password`, `MaNV`) VALUES
+(1, 'admin', '123456', 'NV01');
 
 -- --------------------------------------------------------
 
@@ -242,7 +266,7 @@ CREATE TABLE `tbl_tangca` (
   `Thang` int(11) DEFAULT NULL,
   `Ngay` int(11) DEFAULT NULL,
   `SoGio` float DEFAULT NULL,
-  `MaNV` int(11) DEFAULT NULL,
+  `MaNV` varchar(15) DEFAULT NULL,
   `IDLoaiCa` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -270,7 +294,7 @@ CREATE TABLE `tbl_ungluong` (
   `Ngay` int(11) DEFAULT NULL,
   `SoTien` float DEFAULT NULL,
   `TrangThai` bit(50) DEFAULT NULL,
-  `MaNV` int(11) DEFAULT NULL
+  `MaNV` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -308,9 +332,9 @@ ALTER TABLE `tbl_hopdong`
   ADD PRIMARY KEY (`SoHD`);
 
 --
--- Chỉ mục cho bảng `tbl_khenthuong&kyluat`
+-- Chỉ mục cho bảng `tbl_khenthuongkyluat`
 --
-ALTER TABLE `tbl_khenthuong&kyluat`
+ALTER TABLE `tbl_khenthuongkyluat`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -347,8 +371,7 @@ ALTER TABLE `tbl_phucap`
 -- Chỉ mục cho bảng `tbl_taikhoan`
 --
 ALTER TABLE `tbl_taikhoan`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `MaNV` (`MaNV`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Chỉ mục cho bảng `tbl_tangca`
@@ -367,16 +390,6 @@ ALTER TABLE `tbl_trinhdo`
 --
 ALTER TABLE `tbl_ungluong`
   ADD PRIMARY KEY (`ID`);
-
---
--- Các ràng buộc cho các bảng đã đổ
---
-
---
--- Các ràng buộc cho bảng `tbl_taikhoan`
---
-ALTER TABLE `tbl_taikhoan`
-  ADD CONSTRAINT `tbl_taikhoan_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `tbl_nhanvien` (`MaNV`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

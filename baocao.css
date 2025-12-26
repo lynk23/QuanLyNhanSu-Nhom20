@@ -1,67 +1,121 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Trang */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #f4f6f8;
 }
 
+/* Khung */
 .container {
-    width: 1000px;
-    margin: auto;
+    width: 95%;
+    max-width: 1200px;
     background: #ffffff;
-    padding: 20px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+/* Tiêu đề */
 h1 {
     text-align: center;
     color: #2c3e50;
-    margin-bottom: 30px;
-}
-
-.summary {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
 }
 
-.box {
-    width: 32%;
-    background: #3498db;
-    color: white;
-    padding: 15px;
-    border-radius: 6px;
-    text-align: center;
-    font-size: 18px;
+/* Khu vực nút */
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 15px;
+
 }
 
-h2 {
-    margin-top: 30px;
-    color: #34495e;
+/* Nút chung */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
+/* Nút làm mới */
+.btn.refresh {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: #fff;
+}
+
+.btn.refresh:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+}
+
+/* Nút in */
+.btn.print {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: #fff;
+}
+
+.btn.print:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(46, 204, 113, 0.4);
+}
+
+/* Bảng */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-table th,
-table td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
+table thead {
+    background: #27ae60;
+    color: #fff;
 }
 
-table th {
-    background: #2ecc71;
-    color: white;
+table th,
+table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
 table tr:nth-child(even) {
     background: #f9f9f9;
 }
 
-img {
-    width: 60px;
-    height: auto;
-    border-radius: 4px;
+/* Trạng thái */
+.thuong {
+    color: green;
+    font-weight: bold;
 }
 
+.kyluat {
+    color: red;
+    font-weight: bold;
+}
+
+.empty {
+    text-align: center;
+    color: #999;
+}
+/* ẨN NÚT KHI IN */
+@media print {
+    button {
+    display: none !important;
+  }
+}
