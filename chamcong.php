@@ -30,7 +30,7 @@ mysqli_query(
 <head>
     <meta charset="UTF-8">
     <title>Quản lý chấm công</title>
-    <link rel="stylesheet" href="quanly.css">
+    <link rel="stylesheet" href="chamcong.css">
 
 <script>
 function getSelectedIds() {
@@ -47,7 +47,7 @@ function handleEdit() {
 
     let form = document.createElement('form');
     form.method = 'POST';
-    form.action = 'sua_bangcong.php';
+    form.action = 'sua_chamcong.php';
 
     ids.forEach(id => {
         let input = document.createElement('input');
@@ -102,7 +102,7 @@ window.onload = function () {
     <a href="nhanvien.php">👨‍💼Quản lý nhân viên</a>
     <a href="phongban.php">👤Quản lý phòng ban</a>
     <a href="luong.php">💵Quản lý lương</a>
-    <a href="luong.php">✅Quản lý chấm công</a>
+    <a href="chamcong.php">✅Quản lý chấm công</a>
     <a href="baocao.php">📆Báo cáo thống kê</a>
 </div>
 

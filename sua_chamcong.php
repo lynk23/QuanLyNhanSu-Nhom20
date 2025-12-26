@@ -48,7 +48,7 @@ $row = mysqli_fetch_assoc($result);
 <head>
     <meta charset="UTF-8">
     <title>Sửa chấm công</title>
-    <link rel="stylesheet" href="css/suanhanvien.css">
+    <link rel="stylesheet" href="chamcong.css">
 </head>
 <body>
 

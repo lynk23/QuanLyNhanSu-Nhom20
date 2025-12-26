@@ -36,7 +36,7 @@ $ds_nv = mysqli_query(
 <head>
     <meta charset="UTF-8">
     <title>Thêm chấm công</title>
-    <link rel="stylesheet" href="quanly.css">
+    <link rel="stylesheet" href="chamcong.css">
 </head>
 <body>
 
