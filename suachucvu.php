@@ -1,5 +1,5 @@
 <?php
-include_once('ketnoi.php');
+include_once('connect.php');
 
 /* LẤY DỮ LIỆU KHI LOAD FORM */
 if (isset($_GET['id'])) {

@@ -1,5 +1,5 @@
 <?php
-include_once('ketnoi.php');
+include_once('connect.php');
 
 /* Lấy ID phòng ban từ URL */
 if (isset($_GET['id'])) {

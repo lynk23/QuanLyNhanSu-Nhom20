@@ -1,5 +1,5 @@
 <?php
-include_once('ketnoi.php');
+include_once('connect.php');
 
 /* Lấy ID chức vụ từ URL */
 if (isset($_GET['id'])) {
