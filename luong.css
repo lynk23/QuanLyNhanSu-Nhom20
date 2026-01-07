@@ -1,0 +1,137 @@
+/* ================= RESET ================= */
+.luong-page *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", Tahoma, Arial;
+}
+
+/* ================= NỀN CHUNG ================= */
+.luong-page{
+    min-height:100vh;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#fff;
+}
+
+/* ================= MENU TRÊN ================= */
+.luong-page .menu,
+.luong-page .menu-chuyen{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    padding:15px;
+    background:rgba(0,0,0,0.65);
+}
+
+.luong-page .menu a,
+.luong-page .menu-chuyen a{
+    background:#1e88e5;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:14px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.3);
+}
+
+.luong-page .menu a:hover,
+.luong-page .menu-chuyen a:hover{
+    background:#1565c0;
+}
+
+/* ================= TIÊU ĐỀ ================= */
+.luong-page h2,
+.luong-page .tieude-form{
+    text-align:center;
+    margin:22px 0;
+    color:#ffeb3b;
+    letter-spacing:3px;
+}
+
+/* ================== BẢNG LƯƠNG ================== */
+.luong-page .table-wrap{
+    width:95%;
+    margin:0 auto;
+}
+
+/* Bảng */
+.luong-page table{
+    width:100%;
+    background:#fff;
+    color:#000;
+    border-spacing:0;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+/* Header */
+.luong-page th{
+    background:#3cd070;
+    padding:10px;
+    font-size:14px;
+    border:1px solid #2e7d32;
+}
+
+/* Ô dữ liệu */
+.luong-page td{
+    padding:8px;
+    font-size:13px;
+    text-align:center;
+    border:1px solid #ddd;
+}
+
+/* Hover */
+.luong-page tr:hover{
+    background:#f1f8e9;
+}
+
+/* Dòng được chọn */
+.luong-page tr.selected{
+    background:#c8e6c9 !important;
+}
+
+/* ================= BUTTON ================= */
+.luong-page .action{
+    margin:18px 0;
+    text-align:center;
+}
+
+.luong-page .action button{
+    padding:10px 22px;
+    margin:6px;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 4px 8px rgba(0,0,0,0.3);
+    background:#ffc107;
+}
+
+.luong-page .action button:hover{
+    opacity:0.9;
+    transform:translateY(-2px);
+}
+
+/* Xóa */
+.luong-page .action button.danger{
+    background:#e53935;
+    color:#fff;
+}
+
+/* Khôi phục */
+.luong-page .action button.restore{
+    background:#4caf50;
+    color:#fff;
+}
+
+/* ================= THÔNG BÁO ================= */
+.luong-page .alert{
+    background:#43a047;
+    color:#fff;
+    padding:12px 18px;
+    margin:15px auto;
+    width:fit-content;
+    border-radius:8px;
+    font-weight:600;
+}

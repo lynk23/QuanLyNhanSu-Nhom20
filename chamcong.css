@@ -1,0 +1,189 @@
+/* ===============================
+   RESET & CƠ BẢN
+================================ */
+.chamcong-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.chamcong-page {
+    min-height: 100vh;
+    background: #f4f6f9;
+    padding: 20px;
+    color: #333;
+}
+
+/* ===============================
+   MENU TRÊN / CHUYỂN TRANG
+================================ */
+.chamcong-page .menu,
+.chamcong-page .menu-chuyen {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.chamcong-page .menu a,
+.chamcong-page .menu-chuyen a {
+    background: #0d6efd;
+    color: #fff;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.chamcong-page .menu a:hover,
+.chamcong-page .menu-chuyen a:hover {
+    background: #084298;
+}
+
+/* ===============================
+   TIÊU ĐỀ
+================================ */
+.chamcong-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0d6efd;
+}
+
+/* ===============================
+   BẢNG CHẤM CÔNG
+================================ */
+.chamcong-page .table-chamcong {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.chamcong-page .table-chamcong th,
+.chamcong-page .table-chamcong td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.chamcong-page .table-chamcong th {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.chamcong-page .table-chamcong tr:hover {
+    background-color: #f1f1f1;
+}
+
+.chamcong-page .table-chamcong tr.selected {
+    background-color: #dbeafe !important;
+}
+
+/* Dòng nghỉ / đã xóa */
+.chamcong-page .table-chamcong tr[style*="background:#f8d7da;"] {
+    color: #842029;
+    font-weight: bold;
+}
+
+/* ===============================
+   NÚT HÀNH ĐỘNG
+================================ */
+.chamcong-page .action {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.chamcong-page .action button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+/* Button màu */
+.chamcong-page .btn-them {
+    background: #198754;
+    color: #fff;
+}
+
+.chamcong-page .btn-sua {
+    background: #ffc107;
+    color: #000;
+}
+
+.chamcong-page .btn-xoa {
+    background: #dc3545;
+    color: #fff;
+}
+
+.chamcong-page .btn-them:hover { background: #157347; }
+.chamcong-page .btn-sua:hover { background: #ffca2c; }
+.chamcong-page .btn-xoa:hover { background: #bb2d3b; }
+
+/* ===============================
+   FORM THÊM / SỬA
+================================ */
+.chamcong-page .form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.chamcong-page .form-container label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.chamcong-page .form-container input[type="text"],
+.chamcong-page .form-container input[type="date"],
+.chamcong-page .form-container select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.chamcong-page .form-container input[type="submit"] {
+    margin-top: 15px;
+    width: 100%;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chamcong-page .form-container input[type="submit"]:hover {
+    background: #084298;
+}
+
+/* ===============================
+   NÚT TRANG CHỦ
+================================ */
+.chamcong-page .home-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #0d6efd;
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    z-index: 999;
+}
+
+.chamcong-page .home-btn:hover {
+    background: #084298;
+}
