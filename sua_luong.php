@@ -3,16 +3,17 @@ include "connect.php";
 
 /* ===============================
    LẤY DANH SÁCH LƯƠNG
+   Chỉ lấy bản ghi chưa xóa
 ================================ */
 $sql = "
     SELECT 
-        id,
-        manv,
+        ID,
+        MaNV,
         hoten,
-        luongcoban,
-        phucap,
-        thuetncn,
-        tongluong
+        Luongcoban,
+        Phucap,
+        ThueTNCN,
+        Tongluong
     FROM tbl_luong
     WHERE is_deleted = 0
     ORDER BY hoten
@@ -33,46 +34,54 @@ if (mysqli_num_rows($result) == 0) {
 </head>
 <body>
 
-<div class="menu">
-    <a href="luong.php">⬅ Quản lý lương</a>
-</div>
+<div class="luong-page">
 
-<h2 class="tieude-form">SỬA THÔNG TIN LƯƠNG</h2>
-
-<div class="form-container">
-<form method="post" action="xuly_sua_luong.php">
-
-<?php while ($row = mysqli_fetch_assoc($result)) { ?>
-    <div class="nhanvien-block">
-
-        <strong>
-            <?= htmlspecialchars($row['hoten']) ?> 
-            (<?= htmlspecialchars($row['manv']) ?>)
-        </strong>
-
-        <!-- ID lương (BẮT BUỘC) -->
-        <input type="hidden" name="luong[<?= $row['id'] ?>][id]" value="<?= $row['id'] ?>">
-
-        <label>Lương cơ bản</label>
-        <input type="text" name="luong[<?= $row['id'] ?>][luongcoban]"
-               value="<?= $row['luongcoban'] ?>">
-
-        <label>Phụ cấp</label>
-        <input type="text" name="luong[<?= $row['id'] ?>][phucap]"
-               value="<?= $row['phucap'] ?>">
-
-        <label>Thuế TNCN</label>
-        <input type="text" name="luong[<?= $row['id'] ?>][thuetncn]"
-               value="<?= $row['thuetncn'] ?>">
-
+    <div class="menu">
+        <a href="luong.php">⬅ Quản lý lương</a>
     </div>
-    <hr>
-<?php } ?>
 
-<input type="submit" value="💾 Cập nhật toàn bộ lương">
+    <h2 class="tieude-form">SỬA THÔNG TIN LƯƠNG</h2>
 
-</form>
+    <div class="form-container">
+    <form method="post" action="xuly_sua_luong.php">
+
+    <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+        <div class="luong-item">
+
+            <strong>
+                <?= htmlspecialchars($row['hoten']) ?>
+                (<?= htmlspecialchars($row['MaNV']) ?>)
+            </strong>
+
+            <!-- ID lương (BẮT BUỘC) -->
+            <input type="hidden" name="ID[<?= $row['ID'] ?>]" value="<?= $row['ID'] ?>">
+            <input type="hidden" name="MaNV[<?= $row['ID'] ?>]" value="<?= htmlspecialchars($row['MaNV']) ?>">
+            <input type="hidden" name="hoten[<?= $row['ID'] ?>]" value="<?= htmlspecialchars($row['hoten']) ?>">
+
+            <label>Lương cơ bản</label>
+            <input type="number" name="Luongcoban[<?= $row['ID'] ?>]"
+                   value="<?= $row['Luongcoban'] ?>" step="1000">
+
+            <label>Phụ cấp</label>
+            <input type="number" name="Phucap[<?= $row['ID'] ?>]"
+                   value="<?= $row['Phucap'] ?>" step="1000">
+
+            <label>Thuế TNCN</label>
+            <input type="number" name="ThueTNCN[<?= $row['ID'] ?>]"
+                   value="<?= $row['ThueTNCN'] ?>" step="1000">
+
+            <label>Tổng lương</label>
+            <input type="number" name="Tongluong[<?= $row['ID'] ?>]"
+                   value="<?= $row['Tongluong'] ?>" step="1000">
+
+        </div>
+        <hr>
+    <?php } ?>
+
+    <button type="submit" class="btn-submit">💾 Cập nhật toàn bộ lương</button>
+    </form>
+    </div>
+
 </div>
-
 </body>
 </html>

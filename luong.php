@@ -74,7 +74,7 @@ include "connect.php";
         <!-- CHECKBOX -->
         <td>
             <?php if (!empty($row['id'])) { ?>
-                <input type="checkbox" name="ids[]" value="<?= $row['id'] ?>">
+                <input type="checkbox" name="manvs[]" value="<?= $row['manv'] ?>">
             <?php } else { ?>
                 —
             <?php } ?>
@@ -138,11 +138,16 @@ include "connect.php";
         <button type="submit" formaction="xuat_excel_luong.php">
             📥 Xuất Excel
         </button>
+
+        <button type="submit" formaction="tudong_tinh_luong.php">
+            🧮 Tự động tính lương
+        </button>
+
     </div>
 
     </form>
 
-    <a href="trangchu.php">🏠 Trang chủ</a>
+    <a href="index.php" class="home-btn">🏠 Trang chủ</a>
 </div>
 </body>
 </html>

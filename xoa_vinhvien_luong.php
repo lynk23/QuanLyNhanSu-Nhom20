@@ -2,21 +2,33 @@
 session_start();
 include "connect.php";
 
-/* Kiểm tra dữ liệu */
-if (!isset($_POST['ids']) || empty($_POST['ids'])) {
-    $_SESSION['msg'] = "❌ Vui lòng chọn ít nhất 1 dòng để xóa vĩnh viễn";
+/* =========================
+   KIỂM TRA DỮ LIỆU
+========================= */
+if (empty($_POST['manvs'])) {
+    $_SESSION['msg'] = "❌ Vui lòng chọn ít nhất 1 nhân viên để xóa lương";
     header("Location: luong.php");
     exit;
 }
 
-/* Lọc ID an toàn */
-$ids = array_map('intval', $_POST['ids']);
-$id_list = implode(',', $ids);
+/* =========================
+   LỌC MaNV AN TOÀN
+========================= */
+$manvs = array_map(function ($v) use ($conn) {
+    return "'" . mysqli_real_escape_string($conn, $v) . "'";
+}, $_POST['manvs']);
 
-/* XÓA VĨNH VIỄN */
-$sql = "DELETE FROM tbl_luong WHERE id IN ($id_list)";
+$list = implode(',', $manvs);
+
+/* =========================
+   XÓA VĨNH VIỄN
+========================= */
+$sql = "DELETE FROM tbl_luong WHERE MaNV IN ($list)";
 mysqli_query($conn, $sql);
 
-$_SESSION['msg'] = "✅ Đã xóa vĩnh viễn lương đã chọn";
+/* =========================
+   THÔNG BÁO
+========================= */
+$_SESSION['msg'] = "✅ Đã xóa vĩnh viễn lương nhân viên đã chọn";
 header("Location: luong.php");
 exit;
