@@ -71,7 +71,7 @@ include "connect.php";
         <!-- CHECKBOX -->
         <td>
             <?php if (!empty($row['MaCC'])) { ?>
-                 <input type="checkbox" name="ids[]" value="<?= $row['MaCC'] ?>">
+                <input type="checkbox" name="maccs[]" value="<?= $row['MaCC'] ?>">
             <?php } else { ?>
                 —
             <?php } ?>

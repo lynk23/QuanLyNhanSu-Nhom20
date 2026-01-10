@@ -5,7 +5,7 @@ include "connect.php";
 /* ===============================
    KIỂM TRA DỮ LIỆU
 ================================ */
-if (empty($_POST['ids'])) {
+if (empty($_POST['maccs'])) {
     $_SESSION['msg'] = "❌ Vui lòng chọn ít nhất 1 dòng chấm công";
     header("Location: chamcong.php");
     exit;
@@ -14,8 +14,8 @@ if (empty($_POST['ids'])) {
 /* ===============================
    LẤY DANH SÁCH MaCC
 ================================ */
-$ids  = array_map('intval', $_POST['ids']);
-$list = implode(',', $ids);
+$maccs = array_map('intval', $_POST['maccs']);
+$list  = implode(',', $maccs);
 
 /* ===============================
    XÓA VĨNH VIỄN

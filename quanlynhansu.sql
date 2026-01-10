@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 07, 2026 lúc 06:06 PM
+-- Thời gian đã tạo: Th1 04, 2026 lúc 05:17 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -92,17 +92,14 @@ INSERT INTO `tbl_chamcong` (`MaCC`, `MaNV`, `Hoten`, `Ngay`, `TrangThai`, `is_de
 (2, 'NV02', 'Nguyễn Trường Giang', '2026-01-04', 'Đi làm', 0),
 (3, 'NV03', 'Trịnh Phương An', '2026-01-04', 'Đi làm', 0),
 (4, 'NV04', 'Phan Trọng Quân', '2026-01-04', 'Đi làm', 0),
-(5, 'NV05', 'Nguyền Hoàng Dương', '2026-01-03', 'Đi làm', 0),
+(5, 'NV05', 'Nguyền Hoàng Dương', '2026-01-03', 'Đã nghỉ', 1),
+(6, 'NV06', 'Lưu Thanh Duy', '2026-01-03', 'Đã nghỉ', 1),
 (8, 'NV07', 'abc', '2026-01-04', 'Đi làm', 1),
 (9, 'NV07', 'abc', '2026-01-04', 'Đã nghỉ', 1),
 (10, 'NV07', 'abc', '2026-01-04', 'Đã nghỉ', 1),
 (11, 'NV07', 'jjhh', '2026-01-04', 'Đi làm', 1),
-(45, 'NV01', 'Nguyễn Ngọc Linh', '2026-01-07', 'Đi làm', 0),
-(46, 'NV02', 'Lê Thanh Thảo', '2026-01-07', 'Đi làm', 0),
-(47, 'NV03', 'Trịnh Phương An', '2026-01-07', 'Đi làm', 0),
-(48, 'NV04', 'Phan Trọng Quân', '2026-01-07', 'Đi làm', 0),
-(49, 'NV05', 'Nguyền Hoàng Dương', '2026-01-07', 'Đi làm', 0),
-(50, 'NV06', 'Lưu Thanh Duy', '2026-01-07', 'Đi làm', 0);
+(12, 'NV05', 'Nguyền Hoàng Dương', '2026-01-04', 'Đi làm', 0),
+(13, 'NV06', 'Lưu Thanh Duy', '2026-01-04', 'Đi làm', 0);
 
 -- --------------------------------------------------------
 
@@ -205,12 +202,12 @@ CREATE TABLE `tbl_luong` (
 --
 
 INSERT INTO `tbl_luong` (`ID`, `MaNV`, `hoten`, `Luongcoban`, `Phucap`, `ThueTNCN`, `Tongluong`, `is_deleted`) VALUES
-(2, 'NV02', 'Lê Thanh Thảo', 5000000, 0, 0, 5000000, 0),
-(3, 'NV03', 'Trịnh Phương An', 5000000, 0, 0, 5000000, 0),
-(4, 'NV04', 'Phan Trọng Quân', 5000000, 0, 0, 5000000, 0),
-(5, 'NV05', 'Nguyền Hoàng Dương', 5000000, 0, 0, 5000000, 0),
-(8, 'NV06', 'Lưu Thanh Duy', 5000000, 0, 0, 5000000, 0),
-(9, 'NV01', 'Nguyễn Ngọc Linh', 5000000, 0, 0, 5000000, 0);
+(1, 'NV01', 'Nguyễn Ngọc Linh', 5000000, 2000000, 500000, 6500000, 0),
+(2, 'NV02', 'Lê Thanh Thảo', 5000000, 2000000, 500000, 6500000, 0),
+(3, 'NV03', 'Trịnh Phương An', 5000000, 2000000, 500000, 6500000, 0),
+(4, 'NV04', 'Phan Trọng Quân', 5000000, 2000000, 500000, 6500000, 0),
+(5, 'NV05', 'Nguyền Hoàng Dương', 5000000, 2000000, 500000, 6500000, 0),
+(6, 'NV06', 'Lưu Thanh Duy', 5000000, 0, 0, 5000000, 0);
 
 -- --------------------------------------------------------
 
@@ -428,13 +425,7 @@ ALTER TABLE `tbl_ungluong`
 -- AUTO_INCREMENT cho bảng `tbl_chamcong`
 --
 ALTER TABLE `tbl_chamcong`
-  MODIFY `MaCC` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
-
---
--- AUTO_INCREMENT cho bảng `tbl_luong`
---
-ALTER TABLE `tbl_luong`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `MaCC` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

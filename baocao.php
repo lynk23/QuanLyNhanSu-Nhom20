@@ -72,7 +72,7 @@ if (!$result) {
 
         <!-- NÚT CHỨC NĂNG -->
          <br> </br>
-        <div class="footer-left no-print">
+        <div class="footer-left">
             <a href="trangchu.php" class="home-btn">🏠 Trang chủ</a>
         </div>
         <div style="clear: both;"></div>
@@ -80,9 +80,6 @@ if (!$result) {
             <button onclick="location.reload();" class="btn refresh">
                 🔄 Làm mới
             </button>
-            <a href="xuat_excel_baocao.php" class="btn btn-excel no-print">
-                📊 Xuất Excel
-            </a>
             <button onclick="window.print();" class="btn print">
                 🖨️ In báo cáo
             </button>

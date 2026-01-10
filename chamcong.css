@@ -1,20 +1,17 @@
 /* ===============================
-   RESET (CHỈ TRONG TRANG CHẤM CÔNG)
+   RESET & CƠ BẢN
 ================================ */
-.chamcong-page *{
+.chamcong-page * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ===============================
-   LAYOUT TRANG (PHẲNG – KHÔNG KHUNG)
-================================ */
-.chamcong-page{
+.chamcong-page {
     min-height: 100vh;
-    background: transparent; /* giống trang lương */
-    padding: 0;
+    background: #f4f6f9;
+    padding: 20px;
     color: #333;
 }
 
@@ -22,167 +19,125 @@
    MENU TRÊN / CHUYỂN TRANG
 ================================ */
 .chamcong-page .menu,
-.chamcong-page .menu-chuyen{
+.chamcong-page .menu-chuyen {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 15px;
-    background: rgba(0,0,0,0.65);
     margin-bottom: 20px;
 }
 
 .chamcong-page .menu a,
-.chamcong-page .menu-chuyen a{
-    background: #1e88e5;
+.chamcong-page .menu-chuyen a {
+    background: #0d6efd;
     color: #fff;
-    padding: 10px 18px;
+    padding: 10px 14px;
     text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 14px;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
 .chamcong-page .menu a:hover,
-.chamcong-page .menu-chuyen a:hover{
-    background: #1565c0;
+.chamcong-page .menu-chuyen a:hover {
+    background: #084298;
 }
 
 /* ===============================
    TIÊU ĐỀ
 ================================ */
-.chamcong-page h2{
+.chamcong-page h2 {
     text-align: center;
-    margin: 22px 0;
-    color: #ff9800;
-    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #0d6efd;
 }
 
 /* ===============================
-   WRAP BẢNG
+   BẢNG CHẤM CÔNG
 ================================ */
-.chamcong-page .table-wrap{
+.chamcong-page .table-chamcong {
     width: 100%;
-    overflow-x: auto;
-}
-
-/* ===============================
-   BẢNG CHẤM CÔNG (GIỐNG LƯƠNG)
-================================ */
-.chamcong-page table{
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: separate;
-    background: #2b2b2b;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: none; /* ❌ bỏ khung mờ */
-}
-
-/* Header */
-.chamcong-page th{
-    background: linear-gradient(135deg,#4caf50,#81c784);
-    color: #000;
-    padding: 12px;
-    font-size: 14px;
-    font-weight: 700;
-    text-align: center;
-    border-bottom: 1px solid #2e7d32;
-}
-
-/* Cell */
-.chamcong-page td{
-    padding: 10px;
-    font-size: 13px;
-    text-align: center;
-    color: #fff;
-    border-top: 1px solid #444;
-}
-
-/* Hover */
-.chamcong-page tr:hover{
-    background: #383838;
-}
-
-/* Dòng đã xóa */
-.chamcong-page tr[style*="f8d7da"]{
-    background: #5c2b2b !important;
-}
-
-/* ===============================
-   TRẠNG THÁI
-================================ */
-.chamcong-page .di-lam{
-    color: #4caf50;
-    font-weight: bold;
-}
-
-/* ===============================
-   CHECKBOX
-================================ */
-.chamcong-page input[type="checkbox"]{
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
-/* ===============================
-   ACTION BUTTON
-================================ */
-.chamcong-page .action{
-    margin: 25px 0;
-    text-align: center;
-}
-
-.chamcong-page .action button{
-    padding: 10px 18px;
-    margin: 6px;
+    border-collapse: collapse;
+    background: #fff;
     border-radius: 8px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    background: #ffc107;
-    color: #000;
+    overflow: hidden;
 }
 
-.chamcong-page .action button:hover{
-    opacity: 0.9;
-    transform: translateY(-2px);
+.chamcong-page .table-chamcong th,
+.chamcong-page .table-chamcong td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.chamcong-page .table-chamcong th {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.chamcong-page .table-chamcong tr:hover {
+    background-color: #f1f1f1;
+}
+
+.chamcong-page .table-chamcong tr.selected {
+    background-color: #dbeafe !important;
+}
+
+/* Dòng nghỉ / đã xóa */
+.chamcong-page .table-chamcong tr[style*="background:#f8d7da;"] {
+    color: #842029;
+    font-weight: bold;
+}
+
+/* ===============================
+   NÚT HÀNH ĐỘNG
+================================ */
+.chamcong-page .action {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.chamcong-page .action button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
 /* Button màu */
-.chamcong-page .btn-them{
+.chamcong-page .btn-them {
     background: #198754;
     color: #fff;
 }
 
-.chamcong-page .btn-sua{
+.chamcong-page .btn-sua {
     background: #ffc107;
     color: #000;
 }
 
-.chamcong-page .btn-xoa,
-.chamcong-page .action .danger{
-    background: #e53935;
+.chamcong-page .btn-xoa {
+    background: #dc3545;
     color: #fff;
 }
 
-.chamcong-page .btn-them:hover{ background:#157347; }
-.chamcong-page .btn-sua:hover{ background:#ffca2c; }
-.chamcong-page .btn-xoa:hover{ background:#bb2d3b; }
+.chamcong-page .btn-them:hover { background: #157347; }
+.chamcong-page .btn-sua:hover { background: #ffca2c; }
+.chamcong-page .btn-xoa:hover { background: #bb2d3b; }
 
 /* ===============================
    FORM THÊM / SỬA
 ================================ */
-.chamcong-page .form-container{
+.chamcong-page .form-container {
     max-width: 600px;
     margin: auto;
     background: #fff;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: none; /* ❌ bỏ khung mờ */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.chamcong-page .form-container label{
+.chamcong-page .form-container label {
     display: block;
     margin-bottom: 6px;
     font-weight: bold;
@@ -190,17 +145,17 @@
 
 .chamcong-page .form-container input[type="text"],
 .chamcong-page .form-container input[type="date"],
-.chamcong-page .form-container select{
+.chamcong-page .form-container select {
     width: 100%;
     padding: 8px 10px;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
 
-.chamcong-page .form-container input[type="submit"]{
+.chamcong-page .form-container input[type="submit"] {
     margin-top: 15px;
     width: 100%;
-    background: #1e88e5;
+    background: #0d6efd;
     color: white;
     border: none;
     padding: 10px;
@@ -209,22 +164,26 @@
     cursor: pointer;
 }
 
-.chamcong-page .form-container input[type="submit"]:hover{
-    background: #1565c0;
+.chamcong-page .form-container input[type="submit"]:hover {
+    background: #084298;
 }
 
 /* ===============================
-   NÚT TRANG CHỦ (NẰM TRONG MENU)
+   NÚT TRANG CHỦ
 ================================ */
-.chamcong-page .home-btn{
-    background: #1e88e5;
-    color: #fff;
-    padding: 10px 18px;
-    border-radius: 8px;
+.chamcong-page .home-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #0d6efd;
+    color: white;
+    padding: 10px 14px;
     text-decoration: none;
-    font-weight: 600;
+    border-radius: 6px;
+    font-weight: bold;
+    z-index: 999;
 }
 
-.chamcong-page .home-btn:hover{
-    background: #1565c0;
+.chamcong-page .home-btn:hover {
+    background: #084298;
 }
