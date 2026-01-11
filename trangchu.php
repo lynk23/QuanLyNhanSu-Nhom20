@@ -1,5 +1,11 @@
 <?php
+session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
+    header("Location: index.php");
+    exit();
 
+   
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,16 +17,19 @@
     <title>Quản Lý Nhân Sự</title>
 </head>
 <body>
+    
 <div class="container">
 
     <!-- Sidebar -->
     <div class="sidebar">
         <ul>
-            <li><a href="trangchu.php"><i class="fas fa-home"></i> <div class="title">Trang chủ</div></a></li>
+             <li><a href="trangchu.php"><i class="fas fa-home"></i> <div class="title">Trang chủ</div></a></li>
             <li><a href="nhanvien.php"><i class="fas fa-user-tie"></i> <div class="title">Quản lý nhân viên</div></a></li>
-            <li><a href="phongban.php"><i class="fas fa-cogs"></i> <div class="title">Phòng ban</div></a></li>
             <li><a href="luong.php"><i class="fas fa-money-bill-wave"></i> <div class="title">Lương và phụ cấp</div></a></li>
+            <li><a href="chamcong.php"><i class="fas fa-clipboard-check"></i> <div class="title">Chấm công</div></a></li>
+            <li><a href="chucvu.php"><i class="fa-solid fa-briefcase"></i> <div class="title">Chức vụ</div></a></li>
             <li><a href="baocao.php"><i class="fa fa-chart-bar"></i> <div class="title">Báo cáo và thống kê</div></a></li>
+            <li><a href="Phongban.php"><i class="fas fa-users"></i> <div class="title">Phòng ban</div></a></li>
             <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> <div class="title">Đăng xuất</div></a></li>
         </ul>
     </div>
@@ -41,7 +50,12 @@
                 <span><?php echo $_SESSION['username']; ?></span>
             </div>
         </div>
-
+    <h2 style="margin: 20px 20px 10px;">
+        Xin chào, <?php echo $_SESSION['username']; ?> 👋
+    </h2>
+    <p style="margin-left: 20px; color: #555;">
+        Chúc bạn một ngày làm việc hiệu quả!
+    </p>
         <div class="cards">
             <div class="card">
                 <div class="card-content">
@@ -80,34 +94,51 @@
                 </div>
             </div>
         </div>
+       
+            
+        <div class="chart">
+    <div class="chart-header">
+        <h3 style="margin-left: 20px;  margin-top: 20px; 
+    margin-bottom: 20px; color: #555;">Danh sách nhân viên</h3>
+       
+    </div>
 
-        <!-- Thêm bảng nhân viên / chấm công nếu cần -->
-        <div class="tables">
-            <h2>Danh sách nhân viên gần đây</h2>
-            <!-- Bảng nhân viên -->
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tên</th>
-                        <th>Bộ phận</th>
-                        <th>Chức vụ</th>
-                        <th>Hành động</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Nguyễn Văn A</td>
-                        <td>Phòng Kinh Doanh</td>
-                        <td>Nhân viên</td>
-                        <td>
-                            <i class="far fa-eye"></i>
-                            <i class="far fa-edit"></i>
-                            <i class="far fa-trash-alt"></i>
-                        </td>
-                    </tr>
-                    <!-- Thêm dữ liệu khác -->
-                </tbody>
-            </table>
+    <div class="chart-content">
+        <table class="employee-table">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Mã NV</th>
+                    <th>Họ tên</th>
+                    <th>Điện thoại</th>
+                    <th>Địa chỉ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                include "connect.php";
+
+                $sql = "SELECT MaNV, HoTen, DienThoai, DiaChi FROM tbl_nhanvien";
+                $result = mysqli_query($conn, $sql);
+                $stt = 1;
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>
+                        <td>{$stt}</td>
+                        <td>{$row['MaNV']}</td>
+                        <td>{$row['HoTen']}</td>
+                        <td>{$row['DienThoai']}</td>
+                        <td>{$row['DiaChi']}</td>
+                    </tr>";
+                    $stt++;
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+    
         </div>
     </div>
 </div>

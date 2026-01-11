@@ -11,14 +11,26 @@ if (isset($_POST['dangnhap'])) {
     $sql = "SELECT * FROM tbl_taikhoan WHERE username='$username' AND password='$password'";
     $result = mysqli_query($conn, $sql);
 
-    if ($result && mysqli_num_rows($result) > 0) {
-        header("Location: trangchu.php");
-        exit; // dừng script ngay lập tức
-        
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['role'] = $row['role'];
+        $_SESSION['ID'] = $row['ID'];
+
+        // PHÂN QUYỀN CHUYỂN TRANG
+        if ($row['role'] == 'admin') {
+            header("Location: trangchu.php");
+        } else {
+            header("Location: trangchunv.php");
+        }
+        exit();
     } else {
-        $message = "Sai tên đăng nhập hoặc mật khẩu!";
+        echo "Sai tài khoản hoặc mật khẩu";
     }
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +55,9 @@ if (isset($_POST['dangnhap'])) {
             <i class="fa-solid fa-key"></i>
             <input type="password" class="form-input" name="password" placeholder="Mật khẩu" required>
             <i class="fa-solid fa-eye" id="eye"></i>
+        </div>
+        <div class="form-forgot">
+            <a href="quenmatkhau.php">Quên mật khẩu ?</a>
         </div>
 
         <input type="submit" name="dangnhap" value="Đăng nhập" class="form-submit">
