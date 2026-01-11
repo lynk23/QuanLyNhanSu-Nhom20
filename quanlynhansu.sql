@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 04, 2026 lúc 05:17 PM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Jan 11, 2026 at 03:12 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `quanlynhansu`
+-- Database: `quanlynhansu`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_baohiem`
+-- Table structure for table `tbl_baohiem`
 --
 
 CREATE TABLE `tbl_baohiem` (
@@ -37,7 +37,7 @@ CREATE TABLE `tbl_baohiem` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_baohiem`
+-- Dumping data for table `tbl_baohiem`
 --
 
 INSERT INTO `tbl_baohiem` (`IDBH`, `SoBH`, `NgayCap`, `NoiCap`, `NoiKhamBenh`, `MaNV`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `tbl_baohiem` (`IDBH`, `SoBH`, `NgayCap`, `NoiCap`, `NoiKhamBenh`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_bophan`
+-- Table structure for table `tbl_bophan`
 --
 
 CREATE TABLE `tbl_bophan` (
@@ -57,7 +57,7 @@ CREATE TABLE `tbl_bophan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_bophan`
+-- Dumping data for table `tbl_bophan`
 --
 
 INSERT INTO `tbl_bophan` (`IDBP`, `TenBP`) VALUES
@@ -71,7 +71,7 @@ INSERT INTO `tbl_bophan` (`IDBP`, `TenBP`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_chamcong`
+-- Table structure for table `tbl_chamcong`
 --
 
 CREATE TABLE `tbl_chamcong` (
@@ -84,7 +84,7 @@ CREATE TABLE `tbl_chamcong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_chamcong`
+-- Dumping data for table `tbl_chamcong`
 --
 
 INSERT INTO `tbl_chamcong` (`MaCC`, `MaNV`, `Hoten`, `Ngay`, `TrangThai`, `is_deleted`) VALUES
@@ -104,7 +104,7 @@ INSERT INTO `tbl_chamcong` (`MaCC`, `MaNV`, `Hoten`, `Ngay`, `TrangThai`, `is_de
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_chucvu`
+-- Table structure for table `tbl_chucvu`
 --
 
 CREATE TABLE `tbl_chucvu` (
@@ -113,7 +113,7 @@ CREATE TABLE `tbl_chucvu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_chucvu`
+-- Dumping data for table `tbl_chucvu`
 --
 
 INSERT INTO `tbl_chucvu` (`IDCV`, `TenCV`) VALUES
@@ -126,7 +126,7 @@ INSERT INTO `tbl_chucvu` (`IDCV`, `TenCV`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_hopdong`
+-- Table structure for table `tbl_hopdong`
 --
 
 CREATE TABLE `tbl_hopdong` (
@@ -144,7 +144,7 @@ CREATE TABLE `tbl_hopdong` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_khenthuongkyluat`
+-- Table structure for table `tbl_khenthuongkyluat`
 --
 
 CREATE TABLE `tbl_khenthuongkyluat` (
@@ -157,7 +157,7 @@ CREATE TABLE `tbl_khenthuongkyluat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_khenthuongkyluat`
+-- Dumping data for table `tbl_khenthuongkyluat`
 --
 
 INSERT INTO `tbl_khenthuongkyluat` (`ID`, `SoKTKL`, `NoiDung`, `Ngay`, `MaNV`, `Loai`) VALUES
@@ -171,7 +171,7 @@ INSERT INTO `tbl_khenthuongkyluat` (`ID`, `SoKTKL`, `NoiDung`, `Ngay`, `MaNV`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_loaica`
+-- Table structure for table `tbl_loaica`
 --
 
 CREATE TABLE `tbl_loaica` (
@@ -183,7 +183,7 @@ CREATE TABLE `tbl_loaica` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_luong`
+-- Table structure for table `tbl_luong`
 --
 
 CREATE TABLE `tbl_luong` (
@@ -198,7 +198,7 @@ CREATE TABLE `tbl_luong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_luong`
+-- Dumping data for table `tbl_luong`
 --
 
 INSERT INTO `tbl_luong` (`ID`, `MaNV`, `hoten`, `Luongcoban`, `Phucap`, `ThueTNCN`, `Tongluong`, `is_deleted`) VALUES
@@ -212,7 +212,7 @@ INSERT INTO `tbl_luong` (`ID`, `MaNV`, `hoten`, `Luongcoban`, `Phucap`, `ThueTNC
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_nhanvien`
+-- Table structure for table `tbl_nhanvien`
 --
 
 CREATE TABLE `tbl_nhanvien` (
@@ -231,7 +231,7 @@ CREATE TABLE `tbl_nhanvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_nhanvien`
+-- Dumping data for table `tbl_nhanvien`
 --
 
 INSERT INTO `tbl_nhanvien` (`MaNV`, `HoTen`, `GioiTinh`, `NgaySinh`, `DienThoai`, `CCCD`, `DiaChi`, `IDPB`, `IDBP`, `IDCV`, `IDTD`, `TrangThai`) VALUES
@@ -240,12 +240,13 @@ INSERT INTO `tbl_nhanvien` (`MaNV`, `HoTen`, `GioiTinh`, `NgaySinh`, `DienThoai`
 ('NV03', 'Trịnh Phương An', b'1', '2005-12-06', '0314256987', '023159486798', 'Hà Nội ', 3, 3, 13, 23, 'Còn làm'),
 ('NV04', 'Phan Trọng Quân', b'0', '2004-01-03', '0341527895', '321452697854', 'Bắc Ninh', 4, 4, 14, 24, 'Còn làm'),
 ('NV05', 'Nguyền Hoàng Dương', b'0', '2004-01-16', '0345678951', '201456348621', 'Hà Nội', 5, 5, 15, 25, 'Còn làm'),
-('NV06', 'Lưu Thanh Duy', b'0', '2004-12-08', '0348795247', '014258369456', 'Bắc Ninh', 6, 6, 16, 26, 'Còn làm');
+('NV06', 'Lưu Thanh Duy', b'0', '2004-12-08', '0348795247', '014258369456', 'Bắc Ninh', 6, 6, 16, 26, 'Còn làm'),
+('NV67165', 'linh', b'1', '2004-02-06', '0945758', NULL, NULL, 0, NULL, 0, NULL, 'Còn làm');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_phongban`
+-- Table structure for table `tbl_phongban`
 --
 
 CREATE TABLE `tbl_phongban` (
@@ -254,7 +255,7 @@ CREATE TABLE `tbl_phongban` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_phongban`
+-- Dumping data for table `tbl_phongban`
 --
 
 INSERT INTO `tbl_phongban` (`IDPB`, `TenPB`) VALUES
@@ -267,7 +268,7 @@ INSERT INTO `tbl_phongban` (`IDPB`, `TenPB`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_taikhoan`
+-- Table structure for table `tbl_taikhoan`
 --
 
 CREATE TABLE `tbl_taikhoan` (
@@ -279,16 +280,18 @@ CREATE TABLE `tbl_taikhoan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_taikhoan`
+-- Dumping data for table `tbl_taikhoan`
 --
 
 INSERT INTO `tbl_taikhoan` (`ID`, `username`, `password`, `MaNV`, `role`) VALUES
-(1, 'admin', '123456', 'NV01', 'admin');
+(1, 'admin', '123456', 'NV01', 'admin'),
+(2, 'admin01', 'Admin@01', 'admin01', 'admin'),
+(3, 'Đặng Hà', 'Ha@1234', 'NV0782', 'nhanvien');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_tangca`
+-- Table structure for table `tbl_tangca`
 --
 
 CREATE TABLE `tbl_tangca` (
@@ -304,7 +307,7 @@ CREATE TABLE `tbl_tangca` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_trinhdo`
+-- Table structure for table `tbl_trinhdo`
 --
 
 CREATE TABLE `tbl_trinhdo` (
@@ -315,7 +318,7 @@ CREATE TABLE `tbl_trinhdo` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_ungluong`
+-- Table structure for table `tbl_ungluong`
 --
 
 CREATE TABLE `tbl_ungluong` (
@@ -329,110 +332,110 @@ CREATE TABLE `tbl_ungluong` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `tbl_baohiem`
+-- Indexes for table `tbl_baohiem`
 --
 ALTER TABLE `tbl_baohiem`
   ADD PRIMARY KEY (`IDBH`);
 
 --
--- Chỉ mục cho bảng `tbl_bophan`
+-- Indexes for table `tbl_bophan`
 --
 ALTER TABLE `tbl_bophan`
   ADD PRIMARY KEY (`IDBP`);
 
 --
--- Chỉ mục cho bảng `tbl_chamcong`
+-- Indexes for table `tbl_chamcong`
 --
 ALTER TABLE `tbl_chamcong`
   ADD PRIMARY KEY (`MaCC`);
 
 --
--- Chỉ mục cho bảng `tbl_chucvu`
+-- Indexes for table `tbl_chucvu`
 --
 ALTER TABLE `tbl_chucvu`
   ADD PRIMARY KEY (`IDCV`);
 
 --
--- Chỉ mục cho bảng `tbl_hopdong`
+-- Indexes for table `tbl_hopdong`
 --
 ALTER TABLE `tbl_hopdong`
   ADD PRIMARY KEY (`SoHD`);
 
 --
--- Chỉ mục cho bảng `tbl_khenthuongkyluat`
+-- Indexes for table `tbl_khenthuongkyluat`
 --
 ALTER TABLE `tbl_khenthuongkyluat`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Chỉ mục cho bảng `tbl_loaica`
+-- Indexes for table `tbl_loaica`
 --
 ALTER TABLE `tbl_loaica`
   ADD PRIMARY KEY (`IDLoaiCa`);
 
 --
--- Chỉ mục cho bảng `tbl_luong`
+-- Indexes for table `tbl_luong`
 --
 ALTER TABLE `tbl_luong`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `idx_manv` (`MaNV`);
 
 --
--- Chỉ mục cho bảng `tbl_nhanvien`
+-- Indexes for table `tbl_nhanvien`
 --
 ALTER TABLE `tbl_nhanvien`
   ADD PRIMARY KEY (`MaNV`);
 
 --
--- Chỉ mục cho bảng `tbl_phongban`
+-- Indexes for table `tbl_phongban`
 --
 ALTER TABLE `tbl_phongban`
   ADD PRIMARY KEY (`IDPB`);
 
 --
--- Chỉ mục cho bảng `tbl_taikhoan`
+-- Indexes for table `tbl_taikhoan`
 --
 ALTER TABLE `tbl_taikhoan`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Chỉ mục cho bảng `tbl_tangca`
+-- Indexes for table `tbl_tangca`
 --
 ALTER TABLE `tbl_tangca`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Chỉ mục cho bảng `tbl_trinhdo`
+-- Indexes for table `tbl_trinhdo`
 --
 ALTER TABLE `tbl_trinhdo`
   ADD PRIMARY KEY (`IDTD`);
 
 --
--- Chỉ mục cho bảng `tbl_ungluong`
+-- Indexes for table `tbl_ungluong`
 --
 ALTER TABLE `tbl_ungluong`
   ADD PRIMARY KEY (`ID`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `tbl_chamcong`
+-- AUTO_INCREMENT for table `tbl_chamcong`
 --
 ALTER TABLE `tbl_chamcong`
   MODIFY `MaCC` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `tbl_luong`
+-- Constraints for table `tbl_luong`
 --
 ALTER TABLE `tbl_luong`
   ADD CONSTRAINT `fk_luong_nhanvien` FOREIGN KEY (`MaNV`) REFERENCES `tbl_nhanvien` (`MaNV`) ON UPDATE CASCADE;
