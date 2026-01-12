@@ -81,10 +81,10 @@ if (!$result) {
 
         <!-- NÚT CHỨC NĂNG -->
          <br> </br>
+         <div style="clear: both;"></div>
         <div class="footer-left">
             <a href="trangchu.php" class="home-btn">🏠 Trang chủ</a>
         </div>
-        <div style="clear: both;"></div>
         <div class="actions">
             <button onclick="location.reload();" class="btn refresh">
                 🔄 Làm mới

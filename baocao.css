@@ -7,16 +7,18 @@
 
 /* Trang */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
+    background: url('baocao.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    padding: 20px;
+    color: #111010;
 }
 
 /* Khung */
 .report-container {
+    background: rgb(207, 200, 200);
     width: 95%;
     max-width: 1200px;
     position: relative;   
-    background: rgb(236, 206, 196);
     margin: 30px auto;
     padding: 60px 30px 30px; /* chừa chỗ cho nút */
     border-radius: 8px;
@@ -42,27 +44,6 @@ body {
 
 .report-menu a.active {
     background: #0d47a1;
-}
-
-/*nút Trang chủ*/
-.footer-left {
-    margin-top: 25px;
-    float: left;
-}
-
-.footer-right {
-    margin-top: 25px;
-    float: right;
-}
-
-.home-btn {
-    background-color: #696969;
-    color: white;
-    padding: 8px 14px;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 
@@ -95,6 +76,31 @@ h1 {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s ease;
+}
+
+/*Nút Trang chủ*/
+.footer-left {
+    margin-top: 25px;
+    float: left;
+}
+
+.footer-right {
+    margin-top: 25px;
+    float: right;
+}
+
+.home-btn {
+    background: linear-gradient(135deg, #696969, #7b7e81);
+    color: #fff;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
 }
 
 /* Nút làm mới */
