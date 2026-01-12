@@ -28,8 +28,17 @@ if (!$result) {
     <link rel="stylesheet" href="baocao.css">
 </head>
 <body>
-
+    
     <div class="report-container">
+        <div class="report-menu">
+            <a href= "nhanvien.php"> 🧑‍💼 Quản lý nhân viên</a>
+            <a href="chucvu.php"> 👤 Quản lý chức vụ</a>
+            <a href="luong.php"> 💶 Quản lý lương</a>
+            <a href="chamcong.php">✅ Quản lý chấm công</a>
+            <a href="baocao.php"> 🗒️ Báo cáo thống kê</a>
+        </div>
+        <br></br>
+
         <h1>BÁO CÁO KHEN THƯỞNG & KỶ LUẬT</h1>
 
         <!-- BẢNG BÁO CÁO -->
