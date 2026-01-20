@@ -1,6 +1,6 @@
 <?php
 // Kết nối CSDL
-$conn = mysqli_connect("localhost", "root", "", "qlnhsu");
+$conn = mysqli_connect("localhost", "root", "", "quanlynhansu");
 mysqli_set_charset($conn, "utf8");
 
 // Lấy mã nhân viên từ URL

@@ -2,7 +2,7 @@
 $keyword  = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 $gioitinh = isset($_GET['gioitinh']) ? $_GET['gioitinh'] : '';
 
-include 'db.php';
+include 'connect.php';
 
 $where = "1=1";
 

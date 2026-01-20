@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-include 'db.php';
+include 'connect.php';
 
 if (isset($_POST['submit'])) {
     $MaNV = $_POST['MaNV'];

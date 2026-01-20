@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include 'connect.php';
 $id = $_GET['id'];
 mysqli_query($conn, "DELETE FROM tbl_nhanvien WHERE MaNV='$id'");
 header("Location: wp_index.php");

@@ -24,7 +24,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     <div class="sidebar">
         <ul>
              <li><a href="trangchu.php"><i class="fas fa-home"></i> <div class="title">Trang chủ</div></a></li>
-            <li><a href="nhanvien.php"><i class="fas fa-user-tie"></i> <div class="title">Quản lý nhân viên</div></a></li>
+            <li><a href="wp_index.php"><i class="fas fa-user-tie"></i> <div class="title">Quản lý nhân viên</div></a></li>
             <li><a href="luong.php"><i class="fas fa-money-bill-wave"></i> <div class="title">Lương và phụ cấp</div></a></li>
             <li><a href="chamcong.php"><i class="fas fa-clipboard-check"></i> <div class="title">Chấm công</div></a></li>
             <li><a href="chucvu.php"><i class="fa-solid fa-briefcase"></i> <div class="title">Chức vụ</div></a></li>
