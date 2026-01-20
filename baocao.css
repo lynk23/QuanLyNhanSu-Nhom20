@@ -174,3 +174,8 @@ table tr:nth-child(even) {
     display: none !important;
   }
 }
+@media print {
+    .report-menu {
+    display: none !important;
+  }
+}
