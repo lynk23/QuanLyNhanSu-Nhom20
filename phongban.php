@@ -17,7 +17,7 @@ $result = mysqli_query($conn, $sql);
     
 </head>
 <div class="menu">
-    <a href= "nhanvien.php"> 🧑‍💼 Quản lý nhân viên</a>
+    <a href="wp_index.php"> 🧑‍💼 Quản lý nhân viên</a>
     <a href="chucvu.php"> 👤 Quản lý chức vụ</a>
     <a href="luong.php"> 💶 Quản lý lương</a>
     <a href="chamcong.php">✅ Quản lý chấm công</a>

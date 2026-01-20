@@ -16,7 +16,7 @@ include "connect.php";
 
     <!-- MENU -->
     <div class="menu-chuyen">
-        <a href="nhanvien.php">👨‍💼 Quản lý nhân viên</a>
+        <a href="wp_index.php">👨‍💼 Quản lý nhân viên</a>
         <a href="phongban.php">🏢 Quản lý phòng ban</a>
         <a href="luong.php">💰 Quản lý lương</a>
         <a href="chamcong.php">✅ Quản lý chấm công</a>
@@ -131,7 +131,7 @@ include "connect.php";
 
     </form>
 
-    <a href="index.php" class="home-btn">🏠 Trang chủ</a>
+    <a href="trangchu.php" class="home-btn">🏠 Trang chủ</a>
 
 </div>
 </body>

@@ -14,7 +14,7 @@ include "connect.php";
 <div class="luong-page">
     <!-- MENU -->
     <div class="menu-chuyen">
-        <a href="nhanvien.php">👨‍💼 Quản lý nhân viên</a>
+        <a href="wp_index.php">👨‍💼 Quản lý nhân viên</a>
         <a href="phongban.php">🏢 Quản lý phòng ban</a>
         <a href="luong.php">💰 Quản lý lương</a>
         <a href="chamcong.php">✅ Quản lý chấm công</a>

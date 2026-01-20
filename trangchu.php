@@ -28,8 +28,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
             <li><a href="luong.php"><i class="fas fa-money-bill-wave"></i> <div class="title">Lương và phụ cấp</div></a></li>
             <li><a href="chamcong.php"><i class="fas fa-clipboard-check"></i> <div class="title">Chấm công</div></a></li>
             <li><a href="chucvu.php"><i class="fa-solid fa-briefcase"></i> <div class="title">Chức vụ</div></a></li>
-            <li><a href="baocao.php"><i class="fa fa-chart-bar"></i> <div class="title">Báo cáo và thống kê</div></a></li>
             <li><a href="Phongban.php"><i class="fas fa-users"></i> <div class="title">Phòng ban</div></a></li>
+            <li><a href="baocao.php"><i class="fa fa-chart-bar"></i> <div class="title">Báo cáo và thống kê</div></a></li>
             <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> <div class="title">Đăng xuất</div></a></li>
         </ul>
     </div>
