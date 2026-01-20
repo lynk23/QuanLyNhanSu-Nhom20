@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-include 'connect.php';
+include 'db.php';
 
 if (isset($_POST['submit'])) {
     $MaNV = $_POST['MaNV'];
@@ -20,8 +20,28 @@ if (isset($_POST['submit'])) {
 
     mysqli_query($conn, $sql);
 
-    header("Location: index.php");
+    header("Location: wp_index.php");
 }
+
+
+if (isset($_POST['tennv'])) {
+
+    $tennv = $_POST['tennv'];
+
+    $anh = $_FILES['anh'];
+    $tenAnh = time() . "_" . $anh['name'];
+
+    $thuMuc = "C:\xampp\htdocs\nhanvien\anhNV";
+    move_uploaded_file($anh['tmp_name'], $thuMuc . $tenAnh);
+
+    $sql = "INSERT INTO tbl_nhanvien (HoTen, HinhAnh)
+            VALUES ('$tennv', '$tenAnh')";
+    mysqli_query($conn, $sql);
+
+    header("Location: wp_index.php");
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,13 +49,20 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Thêm nhân viên</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="wp_style.css">
 </head>
 <body>
 
 <div class="container">
     <h2 style="text-align: center">THÊM NHÂN VIÊN</h2>
 
+    <form method="POST" enctype="multipart/form-data">
+        <input type="text" name="tennv" placeholder="Tên nhân viên" required>
+
+        <input type="file" name="anh" accept="image/*" required>
+
+        <button type="submit">Thêm</button>
+    </form>
     <form method="post">
         <label>Mã nhân viên</label>
         <input type="text" name="MaNV" required>
@@ -65,7 +92,7 @@ if (isset($_POST['submit'])) {
             Lưu nhân viên
         </button>
 
-        <a href="index.php" class="btn btn-delete" style="margin-top: 10px">Quay lại</a>
+        <a href="wp_index.php" class="btn btn-delete" style="margin-top: 10px">Quay lại</a>
     </form>
 </div>
 

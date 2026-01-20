@@ -1,11 +1,11 @@
 <?php
 // Kết nối CSDL
-$conn = mysqli_connect("localhost", "root", "", "quanlynhansu");
+$conn = mysqli_connect("localhost", "root", "", "qlnhsu");
 mysqli_set_charset($conn, "utf8");
 
 // Lấy mã nhân viên từ URL
 if (!isset($_GET['MaNV'])) {
-    header("Location: trangchu.php");
+    header("Location: wp_index.php");
     exit();
 }
 
@@ -15,34 +15,52 @@ $MaNV = $_GET['MaNV'];
 $sql = "SELECT * FROM tbl_nhanvien WHERE MaNV = '$MaNV'";
 $result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) == 0) {
-    echo "Nhân viên không tồn tại";
-    exit();
-}
-
 $row = mysqli_fetch_assoc($result);
 
-// Xử lý cập nhật
-if (isset($_POST['btnUpdate'])) {
-    $HoTen       = $_POST['HoTen'];
-    $GioiTinh    = $_POST['GioiTinh'];
-    $NgaySinh    = $_POST['NgaySinh'];
-    $SoDienThoai = $_POST['SoDienThoai'];
+if (!$row) {
+    echo "Không tìm thấy nhân viên";
+    exit;
+}
 
-    $update = "UPDATE tbl_nhanvien SET
+// Xử lý cập nhật
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $HoTen       = $_POST['HoTen'];
+    $GioiTinh = $_POST['GioiTinh'];
+    $NgaySinh    = $_POST['NgaySinh'];
+    $DienThoai = $row['DienThoai']; // GIỮ SỐ CŨ
+
+if (!empty($_POST['DienThoai'])) {
+    $DienThoai = $_POST['DienThoai'];
+}
+
+    $HinhAnh = $row['HinhAnh'];
+if (isset($_FILES['HinhAnh']) && $_FILES['HinhAnh']['error'] == 0) {
+    if (!empty($_FILES['HinhAnh']['name'])) {
+        $tenAnh = time().'_'.$_FILES['HinhAnh']['name'];
+        move_uploaded_file($_FILES['HinhAnh']['tmp_name'], "uploads/".$tenAnh);
+        $HinhAnh = $tenAnh;
+    }
+}
+    $sql_update = "UPDATE tbl_nhanvien SET
                 HoTen = '$HoTen',
                 GioiTinh = '$GioiTinh',
                 NgaySinh = '$NgaySinh',
-                SoDienThoai = '$SoDienThoai'
+                DienThoai = '$DienThoai',
+                HinhAnh = '$HinhAnh'
                WHERE MaNV = '$MaNV'";
+  
 
-    if (mysqli_query($conn, $update)) {
-        header("Location: trangchu.php");
+    if (mysqli_query($conn, $sql_update)) {
+        header("Location: wp_index.php");
         exit();
     } else {
         echo "Lỗi cập nhật!";
     }
 }
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -104,7 +122,7 @@ if (isset($_POST['btnUpdate'])) {
 <div class="form-container">
     <h2>Cập nhật nhân viên</h2>
 
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <div class="form-group">
             <label>Mã nhân viên</label>
             <input type="text" value="<?php echo $row['MaNV']; ?>" readonly>
@@ -118,14 +136,12 @@ if (isset($_POST['btnUpdate'])) {
         <div class="form-group">
             <label>Giới tính</label>
             <div class="gender-group">
-                <label>
-                    <input type="radio" name="GioiTinh" value="Nam"
-                    <?php if ($row['GioiTinh'] == 'Nam') echo "checked"; ?>> Nam
-                </label>
-                <label>
-                    <input type="radio" name="GioiTinh" value="Nữ"
-                    <?php if ($row['GioiTinh'] == 'Nữ') echo "checked"; ?>> Nữ
-                </label>
+                <input type="radio" name="GioiTinh" value="1"
+                <?= ($row['GioiTinh'] == 1) ? 'checked' : '' ?>> Nam
+
+                <input type="radio" name="GioiTinh" value="0"
+                <?= ($row['GioiTinh'] == 0) ? 'checked' : '' ?>> Nữ
+
             </div>
         </div>
 
@@ -135,7 +151,7 @@ if (isset($_POST['btnUpdate'])) {
         </div>
         <div class="form-group">
             <label>Số điện thoại</label>
-            <input type="text" name="SoDienThoai" value="<?php echo $row['DienThoai']; ?>">
+            <input type="text" name="DienThoai" value="<?php echo $row['DienThoai']; ?>">
         </div>
         <div class="form-group">
             <label>Chức vụ</label>
@@ -145,9 +161,12 @@ if (isset($_POST['btnUpdate'])) {
             <label>Phòng Ban</label>
             <input type="text" name="phong" value="<?php echo $row['IDPB']; ?>">
         </div>
+        <input type="file" name="HinhAnh">
+        <br>
+        <img src="../nhanvien/uploads/<?= $row['HinhAnh'] ?>" width="80">
         <div class="form-actions">
-            <button type="submit" name="btnUpdate">Cập nhật</button>
-            <a href="trangchu.php">Quay lại</a>
+            <button type="submit">Cập nhật</button>
+            <a href="wp_index.php">Quay lại</a>
         </div>
     </form>
 </div>
