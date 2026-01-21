@@ -289,3 +289,25 @@ td i:hover {
 }
 
 
+/*Thongtincanhan*/
+.profile-box {
+    background: #fff;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.profile-box h2 {
+    margin-bottom: 20px;
+}
+
+.profile-box p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.profile-box b {
+    display: inline-block;
+    width: 120px;
+}

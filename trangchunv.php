@@ -23,7 +23,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'nhanvien') {
     <div class="sidebar">
         <ul>
             <li>
-                <a href="index.php">
+                <a href="trangchunv.php">
                     <i class="fas fa-home"></i>
                     <div class="title">Trang chủ</div>
                 </a>

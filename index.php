@@ -17,6 +17,8 @@ if (isset($_POST['dangnhap'])) {
         $_SESSION['username'] = $row['username'];
         $_SESSION['role'] = $row['role'];
         $_SESSION['ID'] = $row['ID'];
+        $_SESSION['MaNV'] = $row['MaNV'];
+
 
         // PHÂN QUYỀN CHUYỂN TRANG
         if ($row['role'] == 'admin') {
